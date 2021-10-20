@@ -6,7 +6,7 @@ log-level: info
 external-controller: 0.0.0.0:9090
 proxies:
   - {name: 'Railway 200M 独享 #1_1', server: node1.txhdrive.workers.dev, port: 443, type: vmess, uuid: 3bdfd50e-2763-4370-ad70-17cfefba3154, alterId: 0, cipher: auto, tls: true, network: ws, ws-path: /3bdfd50e-2763-4370-ad70-17cfefba3154-vmess, ws-headers: {Host: node1.txhdrive.workers.dev}}
-  - {name: 'Railway 100M 共享 #1_2', server: 0.server.tixiaohan.ml, port: 12688, type: vmess, uuid: aab25f69-04f3-4ea1-966a-43ecee569ede, alterId: 56, cipher: auto, tls: false, network: tcp}
+  - {name: 'Railway 100M 共享 #2_2', server: 0.server.tixiaohan.ml, port: 12688, type: vmess, uuid: aab25f69-04f3-4ea1-966a-43ecee569ede, alterId: 56, cipher: auto, tls: false, network: tcp}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -14,14 +14,14 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -29,28 +29,28 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -58,7 +58,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -75,7 +75,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - Railway 200M 独享 #1_1
-      - Railway 100M 共享 #1_2
+      - Railway 100M 共享 #2_2
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
